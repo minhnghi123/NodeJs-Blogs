@@ -3,9 +3,12 @@ const express = require("express");
 const app = express();
 const expressLayout = require("express-ejs-layouts");
 const PORT = 5000 || process.env.PORT;
+const connectDB = require("./server/config/db");
+
+//Connect to DB
+connectDB();
 
 app.use(express.static("public"));
-
 //template Engine
 app.use(expressLayout);
 app.set("layout", "./layouts/main");
