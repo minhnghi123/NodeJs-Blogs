@@ -7,6 +7,8 @@ const connectDB = require("./server/config/db");
 
 //Connect to DB
 connectDB();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use(express.static("public"));
 //template Engine
